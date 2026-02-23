@@ -1,0 +1,17 @@
+HL {
+  /* headline */
+  color: Black;
+  text-align: Left;
+  font-size: 50px;
+}
+SL {
+  /* sub headline */
+  color: black;
+  text-align: left;
+  font-size: 25px;
+}
+.garis {
+  /* underline */
+  border-bottom: 5px solid black;
+  padding-bottom: 0.5px;
+}
