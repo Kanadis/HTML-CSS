@@ -42,3 +42,27 @@ SL {
   background-color: burlywood;
   color: white;
 }
+a:visited {
+  /* tampilan link */
+  color: rgb(64, 149, 64);
+}
+a:hover {
+  /* tampilan sebelum diklik */
+  color: rgb(51, 51, 244);
+}
+a:active {
+  /* tampilan link */
+  color: red;
+}
+.gambar {
+  /* kotak pilihan */
+  min-width: 250px;
+  max-widht: 300px;
+  background-color: white;
+  border: 2px solid blue;
+  border-radius: 100px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3 ease;
+  box-shadow: 0 4px 8px black;
+}
