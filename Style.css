@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 HL {
   /* headline */
   display: block;
@@ -19,10 +23,10 @@ sHL {
 .styleTnR {
   color: black;
   text-align: justify;
-  font-size: 5px;
-  font-family: "Times New Roman";
+  font-size: 15px;
+  font-family: "Arial", sans-serif;
 }
-.garis {
+.u {
   /* underline */
   border-bottom: 5px solid black;
   padding-bottom: 0.5px;
@@ -56,15 +60,62 @@ a:active {
   /* tampilan link */
   color: red;
 }
+
 .gambar {
-  /* kotak pilihan */
-  min-width: 250px;
-  max-widht: 300px;
-  background-color: white;
-  border: 2px solid blue;
-  border-radius: 100px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3 ease;
-  box-shadow: 0 4px 8px black;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+
+  /* Variable untuk warna */
+  --bg-color: rgb(0, 0, 0);
+  --border-color: #333;
+
+  background: var(--bg-color);
+  border: 5px solid var(--border-color);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Warna-warna tinggal ganti variablenya */
+.gambar.merah {
+  --bg-color: #8b0000;
+  --border-color: #ff6b6b;
+}
+.gambar.hitam {
+  --bg-color: black;
+  --border-color: black;
+}
+.gambar.putih {
+  --bg-color: white;
+  --border-color: white;
+}
+
+.gambar.biru {
+  --bg-color: #00008b;
+  --border-color: #6b8eff;
+}
+
+.gambar.hijau {
+  --bg-color: #006400;
+  --border-color: #6bff6b;
+}
+.element-headerL {
+  /*gambar di sebelah kiri*/
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.element-headerR {
+  /*gambar di sebelah kanan*/
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+  align-items: flex-start;
+}
+.element-symbol p {
+  margin: 5px 0;
+  color: #ffffff;
 }
