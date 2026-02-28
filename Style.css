@@ -1,13 +1,15 @@
 HL {
   /* headline */
-  color: Black;
-  text-align: Left;
-  font-size: 50px;
+  display: block;
+  color: black;
+  text-align: center;
+  font-size: 30px;
   font-family: "Times New Roman";
   font-weight: bold;
 }
-SL {
+sHL {
   /* sub headline */
+  display: block;
   color: black;
   text-align: left;
   font-size: 25px;
