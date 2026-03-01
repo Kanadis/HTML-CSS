@@ -1,15 +1,30 @@
 * {
   box-sizing: border-box;
 }
-
+.container {
+  display: grid;
+}
+.container-button {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+}
 HL {
   /* headline */
   display: block;
-  color: black;
+  --font-colorHl: rgb(0, 0, 0);
+  color: var(--font-colorHl);
   text-align: center;
   font-size: 30px;
   font-family: "Times New Roman";
   font-weight: bold;
+}
+.HL.putih {
+  --font-colorHl: white;
+}
+.HL.hitam {
+  --font-colorHl: black;
 }
 sHL {
   /* sub headline */
@@ -21,14 +36,26 @@ sHL {
   font-weight: bold;
 }
 .styleTnR {
-  color: black;
+  --font-color: rgb(0, 0, 0);
+  color: var(--font-color);
   text-align: justify;
   font-size: 15px;
   font-family: "Arial", sans-serif;
 }
+.styleTnR.hitam {
+  --font-color: black;
+}
+.styleTnR.putih {
+  --font-color: white;
+}
+.styleTnR.bg {
+  background-color: rgb(202, 202, 202);
+  padding: 5px;
+}
 .u {
   /* underline */
   border-bottom: 5px solid black;
+  padding-top: 5px;
   padding-bottom: 0.5px;
 }
 .button {
@@ -38,15 +65,45 @@ sHL {
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
+  position: relative;
   display: inline-block;
   font-size: 16px;
+}
+.container-button.center {
+  justify-content: center;
 }
 .button1 {
   border: 2px solid burlywood;
 }
+.button2 {
+  border: 2px solid rgb(120, 66, 0);
+}
+.button3 {
+  border: 2px solid lightblue;
+}
 .button1:hover {
   background-color: burlywood;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.button2:hover {
+  background-color: rgb(120, 66, 0);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.button3:hover {
+  background-color: lightblue;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .container-button {
+    gap: 10px;
+  }
 }
 a:visited {
   /* tampilan link */
@@ -62,6 +119,8 @@ a:active {
 }
 
 .gambar {
+  position: relative;
+  display: inline-block;
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
@@ -76,31 +135,29 @@ a:active {
   padding: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
-  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 /* Warna-warna tinggal ganti variablenya */
-.gambar.merah {
-  --bg-color: #8b0000;
-  --border-color: #ff6b6b;
-}
 .gambar.hitam {
   --bg-color: black;
   --border-color: black;
 }
 .gambar.putih {
-  --bg-color: white;
-  --border-color: white;
+  --bg-color: rgb(192, 192, 192);
+  --border-color: rgb(192, 192, 192);
 }
-
-.gambar.biru {
-  --bg-color: #00008b;
-  --border-color: #6b8eff;
+.gambar.ungu {
+  --bg-color: rgb(117, 42, 214);
+  --border-color: rgb(117, 42, 214);
 }
-
-.gambar.hijau {
-  --bg-color: #006400;
-  --border-color: #6bff6b;
+.gambar.marron {
+  --bg-color: rgb(117, 0, 0);
+  --border-color: rgb(117, 0, 0);
+}
+.gambar.emas {
+  --bg-color: rgb(196, 167, 4);
+  --border-color: rgb(196, 167, 4);
 }
 .element-headerL {
   /*gambar di sebelah kiri*/
@@ -115,7 +172,23 @@ a:active {
   gap: 20px;
   align-items: flex-start;
 }
-.element-symbol p {
-  margin: 5px 0;
-  color: #ffffff;
+/* Gambar normal */
+.gambar .img-normal {
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+}
+.gambar .img-hover {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+  pointer-events: none;
+  object-fit: cover;
+}
+.gambar:hover .img-normal {
+  opacity: 0;
+}
+
+.gambar:hover .img-hover {
+  opacity: 1;
 }
